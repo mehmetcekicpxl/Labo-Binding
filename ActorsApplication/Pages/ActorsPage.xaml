@@ -12,7 +12,7 @@
                 FontSize="Medium" 
                 TextColor="Crimson" 
                 FontAttributes="Bold"/>
-            <CollectionView>
+            <CollectionView ItemsSource="{Binding ActorsList}">
 
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Horizontal" Span="4"/>
@@ -27,7 +27,7 @@
                                 <ColumnDefinition Width="2*" />
                             </Grid.ColumnDefinitions>
 
-                            <Image Source="splash.png"
+                            <Image Source="{Binding ProfilePicture}"
                                    VerticalOptions="Start"
                                    HorizontalOptions="Start"
                                    Aspect="AspectFill"
@@ -42,10 +42,10 @@
                                          Orientation="Vertical">
 
                                 <Label VerticalOptions="Center"
-                                       Text=""
+                                       Text="{Binding LastName}"
                                        FontAttributes="Bold" />
 
-                                <Label Text=""
+                                <Label Text="{Binding BirthYear}"
                                        MaxLines="4"
                                        VerticalOptions="Start"
                                        FontAttributes="Italic" />

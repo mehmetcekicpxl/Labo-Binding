@@ -6,11 +6,16 @@
     <VerticalStackLayout Padding="10,0" >
         <VerticalStackLayout MinimumHeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" 
                              Padding="0,150">
-            <Label Text="Text"></Label>
+            <Label Text="Text"
+                   Rotation="{Binding Source={x:Reference rotationSlider}, Path=Value}"
+                   FontSize="{Binding Source={x:Reference sizeSlider}, Path=Value}"
+                   TextColor="{Binding Source={x:Reference colorPicker}, Path=SelectedItem}"
+                   ></Label>
         </VerticalStackLayout>
         <HorizontalStackLayout>
             <Label Text="Text color:" VerticalOptions="Center"></Label>
             <Picker x:Name="colorPicker"
+                    BackgroundColor="{Binding Source={x:Reference colorPicker}, Path=SelectedItem}"
                     Title="Select a color">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
